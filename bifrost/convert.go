@@ -52,6 +52,7 @@ func (c *DropletToImageConverter) Convert(request cf.DesireLRPRequest) (opi.LRP,
 		panic(err)
 	}
 
+	fmt.Println("Env variables in request: ", request.Environment)
 	lev := launcher.SetupEnv(request.StartCommand)
 
 	return opi.LRP{
